@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Design tokens — every color/font in the site is driven from here.
+   Renaming a value here updates it everywhere it's used.
+   --------------------------------------------------------------- */
+@theme {
+  --color-void: #050816;       /* primary background */
+  --color-panel: #0f172a;      /* secondary background */
+  --color-card: #111827;       /* card background */
+  --color-accent: #3b82f6;     /* electric blue */
+  --color-accent-hover: #2563eb;
+  --color-accent-2: #22d3ee;   /* cyan glow */
+  --color-accent-3: #818cf8;   /* violet glow */
+  --color-muted: #94a3b8;      /* secondary text */
+  --color-subtle: #64748b;     /* tertiary text */
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-void);
+  color: #ffffff;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-panel);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+@layer utilities {
+  /* Glassmorphism card/panel surface */
+  .glass {
+    background: rgba(17, 24, 39, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+  }
+
+  /* Signature circuit-board grid backdrop */
+  .bg-grid {
+    background-image: linear-gradient(rgba(59, 130, 246, 0.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.09) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #ffffff 0%, var(--color-accent-2) 50%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.35);
+  }
+
+  /* Auto-scrolling brand strip. Track is duplicated in the JSX so the
+     -50% translate loops seamlessly. Paused on hover via group-hover. */
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+  .group:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+  .fade-edges {
+    mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, 30px); }
+}
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-30px, 40px); }
+}
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+.animate-drift-1 { animation: drift-1 18s ease-in-out infinite; }
+.animate-drift-2 { animation: drift-2 22s ease-in-out infinite; }
+.animate-drift-3 { animation: drift-3 20s ease-in-out infinite; }
+
+/* Respect users who've asked the OS for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
