@@ -16,6 +16,7 @@ export default function ServicesPreview() {
         className="mx-auto max-w-xl text-center"
       >
         <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">Repairs & Support, Done Right</h2>
+        <br />
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent">Services</span>
       </motion.div>
 
