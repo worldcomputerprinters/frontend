@@ -173,7 +173,7 @@ export default function AdminProductForm() {
             onChange={handleChange("description")}
             required
             rows={4}
-            className="w-full resize-none rounded-xl border border-white/10 bg-panel/60 px-4 py-3 text-sm text-white focus:border-accent focus:outline-none"
+            className="w-full resize-none rounded-xl border border-white/10 bg-panel/60 px-4 py-3 text-sm text-white focus:border-accent focus:outline-none whitespace-pre-line"
           />
         </div>
 
