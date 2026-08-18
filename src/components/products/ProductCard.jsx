@@ -50,7 +50,7 @@ export default function ProductCard({ product, icon: Icon }) {
           </span>
         </div>
         <p className="mt-1 font-mono text-xs uppercase tracking-wide text-accent-2">{product.brand}</p>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{product.description}</p>
+        <p className="mt-2 flex-1 whitespace-pre-wrap text-sm leading-relaxed text-muted">{product.description}</p>
 
         {product.price > 0 ? (
           <p className="mt-3 font-display text-lg font-semibold text-white">
