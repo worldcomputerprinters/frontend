@@ -13,7 +13,7 @@ export default function AdminDashboard() {
         setStats({
           productCount: products.length,
           categoryCount: categoriesRes.data.length,
-          missingPhotos: products.filter((p) => !p.image).length,
+          missingPhotos: products.filter((p) => !p.images || !p.images[0]?.url).length,
           unreadMessages: messagesRes.data.filter((m) => !m.read).length,
         });
       })
