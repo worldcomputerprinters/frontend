@@ -17,6 +17,7 @@ import AdminProductForm from "./pages/admin/AdminProductForm";
 import AdminCategories from "./pages/admin/AdminCategories";
 import AdminCategoryForm from "./pages/admin/AdminCategoryForm";
 import ProductDetail from "./pages/ProductDetail";
+import AdminMessages from "./pages/admin/AdminMessage";
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="categories" element={<AdminCategories />} />
             <Route path="categories/new" element={<AdminCategoryForm />} />
             <Route path="categories/:slug/edit" element={<AdminCategoryForm />} />
+            <Route path="messages" element={<AdminMessages />} />
           </Route>
         </Route>
       </Routes>
