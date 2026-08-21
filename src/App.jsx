@@ -9,7 +9,6 @@ import CategoryPage from "./pages/CategoryPage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import CaseStudiesPage from "./pages/CaseStudiesPage";
-import FAQsPage from "./pages/FAQsPage";
 import ContactPage from "./pages/ContactPage";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -32,7 +31,6 @@ export default function App() {
           <Route path="/products/:slug/:id" element={<ProductDetail />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
-          <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>
 
