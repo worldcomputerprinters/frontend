@@ -59,7 +59,7 @@ export default function ProductCard({ product, icon: Icon }) {
         ) : (
           <p className="mt-3 text-sm text-subtle">Contact for Price</p>
         )}
-        
+          <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
