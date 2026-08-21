@@ -95,7 +95,9 @@ export default function AdminProducts() {
                   <td className="px-5 py-3">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-panel">
-                        {p.image && <img src={p.image} alt={p.name} className="h-full w-full object-cover" />}
+                        {p.images?.[0]?.url && (
+                          <img src={p.images[0].url} alt={p.name} className="h-full w-full object-cover" />
+                        )}
                       </div>
                       <span className="text-white">{p.name}</span>
                     </div>
