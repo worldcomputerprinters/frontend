@@ -76,7 +76,7 @@ export default function ProductDetail() {
             ) : (
               <p className="mt-6 text-muted">Contact for Price</p>
             )}
-            
+              <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
