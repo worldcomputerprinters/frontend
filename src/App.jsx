@@ -17,7 +17,7 @@ import AdminProducts from "./pages/admin/AdminProducts";
 import AdminProductForm from "./pages/admin/AdminProductForm";
 import AdminCategories from "./pages/admin/AdminCategories";
 import AdminCategoryForm from "./pages/admin/AdminCategoryForm";
-import ProductDetails from "./pages/ProductDetails";
+import ProductDetail from "./pages/ProductDetails";
 
 export default function App() {
   return (
@@ -29,7 +29,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:slug" element={<CategoryPage />} />
-          <Route path="/products/:slug/:id" element={<ProductDetails />} />
+          <Route path="/products/:slug/:id" element={<ProductDetail />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
