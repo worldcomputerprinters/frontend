@@ -17,7 +17,7 @@ import AdminProducts from "./pages/admin/AdminProducts";
 import AdminProductForm from "./pages/admin/AdminProductForm";
 import AdminCategories from "./pages/admin/AdminCategories";
 import AdminCategoryForm from "./pages/admin/AdminCategoryForm";
-import ProductDetail from "./pages/ProductDetails";
+import ProductDetail from "./pages/ProductDetail";
 
 export default function App() {
   return (
